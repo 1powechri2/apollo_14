@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'User visits Astronaut Index' do
   scenario 'user sees a list astronauts with attributes' do
-    astro_one = Astronaut.create(name: 'pood', age: '5', job: 'foog')
-    astro_two = Astronaut.create(name: 'pood', age: '5', job: 'foog')
+    astro_one = Astronaut.create(name: 'pood', age: 5, job: 'foog')
+    astro_two = Astronaut.create(name: 'bih', age: 7, job: 'fokl')
 
     visit astronauts_path
 
