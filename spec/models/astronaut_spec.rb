@@ -9,12 +9,15 @@ describe Astronaut do
         expect(astronaut).to be_invalid
       end
     end
-    context 'valid' do
+    context 'valid attributes' do
       it 'is valid with a name, age and job' do
         astronaut = Astronaut.new(name: 'jkjf', age: 5, job: 'potrk')
 
         expect(astronaut).to be_valid
       end
+    end
+    context 'relationships' do
+      it {should have_many(:space_missions)}
     end
   end
 end

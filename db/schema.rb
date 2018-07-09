@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180706181538) do
+ActiveRecord::Schema.define(version: 20180709121900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20180706181538) do
   create_table "space_missions", force: :cascade do |t|
     t.string "title"
     t.integer "trip_length"
+    t.bigint "astronaut_id"
+    t.index ["astronaut_id"], name: "index_space_missions_on_astronaut_id"
   end
 
+  add_foreign_key "space_missions", "astronauts"
 end
