@@ -10,4 +10,9 @@ describe SpaceMission do
       end
     end
   end
+  describe 'Relationships' do
+    context 'relationships' do
+      it {should have_many(:astronauts).through(:astronaut_space_missions)}
+    end
+  end
 end

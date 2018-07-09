@@ -16,8 +16,10 @@ describe Astronaut do
         expect(astronaut).to be_valid
       end
     end
+  end
+  describe 'Relationships' do
     context 'relationships' do
-      it {should have_many(:space_missions)}
+      it {should have_many(:space_missions).through(:astronaut_space_missions)}
     end
   end
 end
